@@ -27,7 +27,7 @@
         <label for="tab-2">Subscribe</label>
         <div class="content">
           <div id="subdiv">  
-              <form>
+              <form method="get" action="" onsubmit="return false;">
                 <table class= "table">
                   <tr>
                     <td>Name </td> 
@@ -63,8 +63,9 @@
                     </td>
                   </tr>
                 </table>
-                <button id ="button2" type = "submit" value = "Submit" onclick="to_json()">SUBSCRIBE</button>
+                <button id ="button2" type = "submit" value = "Submit" onclick="to_json();">SUBSCRIBE</button>
                 <button id ="button3" type = "reset" value ="Reset">RESET</button>
+              </form>
           </div>
         </div>
       </div> 
