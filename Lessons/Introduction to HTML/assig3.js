@@ -1,5 +1,6 @@
+
 function to_json()
-{	
+{	debugger;
 	var details=
 	{
 		"Name": "",
@@ -10,18 +11,18 @@ function to_json()
 		"Interest" : ""
 	};
 
-	if(document.getElementsByName("name").value!= "" && document.getElementsByName("email").value!= "" && document.getElementsByName("address").value!= "" && document.getElementsByName("country").value!= "") 
+	if(document.getElementsByName("name")[0].value!= "" && document.getElementsByName("email")[0].value!= "" && document.getElementsByName("address")[0].value!= "" && document.getElementsByName("country").value!= "") 
 	{	
-		details.Name = document.getElementsByName("name").value,
-		details.Email = document.getElementsByName("email").value,
-		details.Address = document.getElementsByName("address").value,
-		details.Country = document.getElementsByName("country").value
+		details.Name = document.getElementsByName("name")[0].value,
+		details.Email = document.getElementsByName("email")[0].value,
+		details.Address = document.getElementsByName("address")[0].value,
+		details.Country = document.getElementsByName("country")[0].value
 	}
 	else
 	{
 		alert("Fields empty!!");
 	}
-	if(document.getElementsByName("sex").value!= "" && document.getElementsByName("interest").value!= "") 
+	if(document.getElementsByName("sex")[0].value!= "" && document.getElementsByName("interest")[0].value!= "") 
   	{
 		var interest = document.getElementsByName("interest");
 		var len1 = interest.length;
