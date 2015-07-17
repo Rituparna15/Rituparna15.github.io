@@ -59,7 +59,7 @@ function ph_validator()
 {
 	var ph = details.Phone;
 	var array = [];
-	var count = 0, x=0 ;
+	var count = 0, x = 0, i = 0;
 	do
 	{
 		x = ph%10;
@@ -68,6 +68,8 @@ function ph_validator()
 		count = count++;
 	}
 	while(ph>0);
+
+	for()
 
 	if(count==10)
 	{
@@ -86,7 +88,7 @@ function ph_validator()
 
 }
 
-ph_validator;
+ph_validator();
 
 
 
