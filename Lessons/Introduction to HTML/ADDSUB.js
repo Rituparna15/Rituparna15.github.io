@@ -1,4 +1,4 @@
-function create_add(id) 
+function create(id) 
 {
   var maindiv = document.createElement("div");
   maindiv.id = "main";
