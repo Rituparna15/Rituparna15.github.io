@@ -1,0 +1,44 @@
+#first
+{
+    position: absolute;
+    top: 5%;
+    width: 1000px;
+    height: 50px;
+    border: 2px solid red;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+#main
+{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid blue;
+    margin-left: 20px;
+    top: 15%;
+}
+
+.blocks
+{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: right;
+}
+.buttons
+{
+    width: 50px;
+    height: 50px;
+    border: 2px solid green;
+    text-align : center;
+}
+.textbox
+{
+    width: 60px;
+    height: 20px;
+    direction: RTL;
+}
