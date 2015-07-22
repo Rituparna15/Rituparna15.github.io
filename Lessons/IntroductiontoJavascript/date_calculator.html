@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title> Date Calculator </title>
+	<link rel="stylesheet" type="text/css" href="date.css">
+</head>
+<body>
+	<script src="date.js">
+	</script>
+	<div id = "heading">
+		<p>
+			" To see a World in a Grain of Sand
+			And a Heaven in a Wild Flower,
+			Hold Infinity in the palm of your hand 
+			And Eternity in an hour. "
+			 - William Blake
+		</p>
+	</div> 
+	<div id = "main">
+		<div id = "datediff">
+			<br><br>
+			 Confused about the difference in 2 dates? Check your calculation right here!
+			<br><br>
+			<table>
+				<tr>
+					<td>Enter the first date:</td>
+			  		<td><input type="text" id = "d1" name="date1" required placeholder="yyyy-mm-dd"><td>
+			  	</tr>
+			  	<tr>
+					<td>Enter the second date:</td>
+			  		<td><input type="text" id = "d2" name="date2" required placeholder="yyyy-mm-dd"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><button type="button" id = "button" onclick=" datediff() ">Lets Go!</button></td>
+			  		<td><input type="text" id = "ans1" name="ans1" required placeholder="Get your date difference here" ></td>
+			</table> 
+
+		</div>
+		<div id = "timediff">
+			<br><br>
+			 Confused about a difference in time? Become sure with this calculator!
+			<br><br>
+			<table>
+				<tr>
+					<td>Enter time 1:</td>
+			  		<td><input type="text" id = "t1" name="time1" required placeholder="HH:MM"><td>
+			  	</tr>
+			  	<tr>
+					<td>Enter time 2:</td>
+			  		<td><input type="text" id = "t2" name="time2" required placeholder="HH:MM"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><button type="button" id = "button" onclick=" timediff() ">Lets Go!</button></td>
+			  		<td><input type="text" id = "ans2" name="ans2" required placeholder="Get your time difference here" ></td>
+			</table>
+
+		</div>
+		<div id = "nextdate">
+			<br><br>
+			 Input the time with a time interval... You're good to go! You can find the resulting time!
+			<br><br>
+			<table>
+				<tr>
+					<td>Enter time:</td>
+			  		<td><input type="text" id = "time" name="time" required placeholder="HH:MM"><td>
+			  	</tr>
+			  	<tr>
+					<td>Enter time interval:</td>
+			  		<td><input type="text" id = "interval" name="interval" required placeholder="HH:MM"></td>
+			  	</tr>
+			  	<tr>
+			  		<td><button type="button" id = "button" onclick=" timeinterval() ">Lets Go!</button></td>
+			  		<td><input type="text" id = "ans3" name="ans3" required placeholder="Get your next date here" ></td>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,21 +1,47 @@
-function create(id) 
+function start()
 {
   var maindiv = document.createElement("div");
-  maindiv.id = "main";
+  maindiv.id = "main_a";
   document.body.appendChild(maindiv);
+}
 
+function create_add(id) 
+{
+  document.getElementById("main_a").innerHTML="";
+  var maindiv = document.createElement("div");
+  maindiv.id = "main_a";
+  document.body.appendChild(maindiv);
   for(var i = 0; i < 20; i++) 
   {
     var divs = document.createElement("div");                
     divs.className = "blocks";
     divs.id = "div"+i;
     maindiv.appendChild(divs); 
-    if(id=="add")
+    //if(id=="add")
     add(divs.id, i);
-    else if(id=="sub")
+    //else if(id=="sub")
+    //sub(divs.id,i);      
+  }
+}
+function create_sub(id) 
+{
+  document.getElementById("main_a").innerHTML="";
+  var maindiv = document.createElement("div");
+  maindiv.id = "main_a";
+  document.body.appendChild(maindiv);
+ for(var i = 0; i < 20; i++) 
+  {
+    var divss = document.createElement("div");                
+    divs.className = "blocks";
+    divs.id = "sdiv"+i;
+    maindiv.appendChild(divs); 
+    //if(id=="add")
+    //add(divs.id, i);
+    //else if(id=="sub")
     sub(divs.id,i);      
   }
 }
+
 
 function add(id, i)
 {
@@ -77,4 +103,3 @@ function ans_validator(ans, z, ansid)
     ansid.style.backgroundColor="red";
   }
 }
-
