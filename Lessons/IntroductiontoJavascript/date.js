@@ -58,7 +58,7 @@ function tint(t, i)
     if(hrs > 24)
 	    { 
 	    	hrs = hrs - 24 ; 
-	    	document.getElementById("ans3").value = (hrs <= 9 ? "0" : "") + hrs + ":" + (mins <= 9 ? "0" : "") + mins + " minutes the next day";
+	    	document.getElementById("ans3").value = (hrs <= 9 ? "0" : "") + hrs + ":" + (mins <= 9 ? "0" : "") + mins + " the next day";
 	    }
 	    else
 	    	document.getElementById("ans3").value = (hrs <= 9 ? "0" : "") + hrs + ":" + (mins <= 9 ? "0" : "") + mins;
