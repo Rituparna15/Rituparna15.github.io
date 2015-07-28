@@ -1,9 +1,10 @@
-function start()
+(function()
 {
   var maindiv = document.createElement("div");
   maindiv.id = "main_a";
   document.body.appendChild(maindiv);
-}
+  
+})();
 
 function create_add(id) 
 {
@@ -31,7 +32,7 @@ function create_sub(id)
   document.body.appendChild(maindiv);
  for(var i = 0; i < 20; i++) 
   {
-    var divss = document.createElement("div");                
+    var divs = document.createElement("div");                
     divs.className = "blocks";
     divs.id = "sdiv"+i;
     maindiv.appendChild(divs); 
