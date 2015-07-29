@@ -13,7 +13,7 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $sexErr = $addressErr = $interestErr = $phoneErr = $countryErr = "";
-$name = $email = $sex = $address = $interest = $phone = $country = "";
+$name = $email = $sex = $address = $interest = $phone = $country = $count = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
