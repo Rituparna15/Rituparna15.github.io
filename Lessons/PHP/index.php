@@ -13,78 +13,76 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $sexErr = $addressErr = $interestErr = $phoneErr = $countryErr = "";
-$name = $email = $sex = $address = $interest = $phone = $country = $count = "";
-
+$name = $email = $sex = $address = $interest = $phone = $country = "";
+$count = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
    if (empty($_POST["name"])) {
      $nameErr = "Name is required";
-     $count = 0;
    } else {
      $name = test_input($_POST["name"]);
      // check if name only contains letters and whitespace
      if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
        $nameErr = "Only letters and whitespace allowed"; 
-       $count = 1;
+       $count ++;
      }
    }
    
    if (empty($_POST["email"])) {
      $emailErr = "Email is required";
-     $count = 0;
    } else {
      $email = test_input($_POST["email"]);
      // check if e-mail address is well-formed
      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-       $emailErr = "Invalid email format"; 
-       $count = 1;
+       {$emailErr = "Invalid email format"; 
+       $count --;}
+      else
+        $count ++;
      }
    }
    
    if (empty($_POST["address"])) {
      $addressErr = "Address is required";
-     $count = 0;
    } else {
      $address = test_input($_POST["address"]);
-     $count = 1;
+     $count ++;
    }
 
    if (empty($_POST["sex"])) {
      $sexErr = "Gender is required";
-     $count = 0;
    } else {
      $sex = test_input($_POST["sex"]);
-     $count = 1;
+     $count ++;
    }
 
    if (empty($_POST["interest"])) {
      $interestErr = "Interests are required";
-     $count = 0;
    } else {
      $interest = test_input($_POST["interest"]);
-     $count = 1;
+     $count ++;
    }
 
    if (empty($_POST["country"])) {
      $countryErr = "Country is required";
-     $count = 0;
    } else {
      $country = test_input($_POST["country"]);
-     $count = 1;
+     $count ++;
    }
 
   if (empty($_POST["phone"])) {
      $phoneErr = "Phone no is required";
-     $count = 0;
-   } else {
-     if (preg_match('/(0[0-9]{9})/', $phone))
+   } else 
      {
-     $phone = test_input($_POST["phone"]);
-     $count = 1;
-     }
-    else
-      $phoneErr = "Phone number is invalid";
+       if (preg_match('/(0[0-9]{9})/', $phone))
+       {
+       $phone = test_input($_POST["phone"]);
+       $count ++;
+       }
+      else
+      {
+        $phoneErr = "Phone number is invalid";
+      }
     }
 }
 function test_input($data) {
@@ -95,7 +93,7 @@ function test_input($data) {
 }
 
 
-if($count ==1)
+if($count ==7)
 { print "Successfully validated all fields!";
 
 $myfile = fopen("/opt/lampp/htdocs/Ritu/Form.csv", "a");
