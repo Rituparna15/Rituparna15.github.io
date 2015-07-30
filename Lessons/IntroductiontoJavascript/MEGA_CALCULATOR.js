@@ -2,12 +2,9 @@
 {
 	function Create_element(tags, parent, attributes, el_style, el_event, label)
 	{
-		var element=document.Create_element(tags), 
+		var element = document.Create_element(tags), 
 		attrs, events, styles;
-
 		typeof label != "undefined" && element.appendChild(document.createTextNode(label));
-
-
 		if(el_event!=null)
 		{
 			for( events in el_event)
@@ -182,7 +179,7 @@ function Date_time_Calculator()
 	render.innerHTML="";
 	var div1 = Create_element("div", render, {id:"d1", width:"90%"}, {}, {});
 	Create_element("span",  d1, {}, {marginRight:"20%"}, {}, "Principal: ");
-	Create_element("input", d1, {type:"text", id:"P",   placeholder:"Enter the amount" }, {}, {click: function(){only_digit(e)});
+	Create_element("input", d1, {type:"text", id:"P",   placeholder:"Enter the amount" }, {}, {click: function(){only_digit(e)}});
 
 	var div2 = Create_element("div", render, {id:"d2", width:"90%"}, {}, {});
 	Create_element("span",  d2, {}, {marginRight:"27%"}, {}, "Rate of interest: ");
@@ -190,11 +187,11 @@ function Date_time_Calculator()
 
 	var div3 = Create_element("div", render, {id:"d3", width:"90%"}, {}, {});
 	Create_element("span",  d3, {}, {}, {}, "Time (in months): ");
-	Create_element("input", d3, {type:"text", id:"T",   placeholder:"Enter time in months" }, {}, {click: function(){only_digit(e)});
+	Create_element("input", d3, {type:"text", id:"T",   placeholder:"Enter time in months" }, {}, {click: function(){only_digit(e)}});
 
 	var div4 = Create_element("div", render, {id:"d4", width:"90%"}, {}, {});
 	Create_element("span",  d4, {}, {marginRight:"27%"}, {}, "EMI : ");
-	Create_element("input", d4, {type:"text", id:"E", placeholder:"Enter the EMI" }, {}, {click: function(){only_digit(e)});
+	Create_element("input", d4, {type:"text", id:"E", placeholder:"Enter the EMI" }, {}, {click: function(){only_digit(e)}});
 
 	var div5 = Create_element("div", render, {id:"d5", width:"90%"}, {}, {});
 	Create_element("input", d5, {type:"submit", value:"Submit" }, {marginTop:"3%"}, {click: function(){getdata()}});
@@ -259,7 +256,7 @@ function Date_time_Calculator()
 	function Basic_Calculator()
 	{
 		render.innerHTML = "";
-		Create_element("span", render, {id:"mtxt"}, {position: "absolute", fontSize: "10px", visibility: "hidden"}, {}, "M");
+		Create_element("span", render, {id:"mem_text"}, {position: "absolute", fontSize: "10px", visibility: "hidden"}, {}, "M");
 	   	Create_element("input", render, {type:"text", id:"display", placeholder:"0" }, {width:"25 em", height:"3em", textAlign:"right"},{}); 
 
 	    var buttontable = Create_element("table", render, {id:"buttontable"}, {}, {});	
@@ -268,7 +265,7 @@ function Date_time_Calculator()
 		function insertbutton(condition, row, data, blabel, operation)
 		{
 			if(condition)
-		    Create_element("tr", buttontable, {id:row}, {}, {});
+		    Create_element("tr", buttontable, {bid:row}, {}, {});
 		
 		    var td = document.Create_element("TD");
 		    Create_element("input", td, {type:"submit", value: blabel}, {width: "6 em", height: "3 em", background: "transparent", borderRadius: "5px", border: "1px solid blue", outline:"none", cursor: "pointer" }, {click: function () {operation(this)}});
@@ -308,13 +305,41 @@ function Date_time_Calculator()
 	    insertbutton(false, 5, 3, "=", result);
 	    insertbutton(false, 5, 4, "/", buttons_ops);
 
+	    function memory_ops(op)
+		{
+		  var dis = document.getElementById('display').value;
+		  var m = document.getElementById('mem_text');
+
+		      if(op.value == "M+")
+		      {
+		         memory += parseFloat(dis);
+		         m.style.visibility = "visible";
+		      }
+
+		      else if(op.value == "M-")
+		      {
+		        memory -= parseFloat(dis);
+		        m.style.visibility = "visible";
+		      }
+		      else if(op.value == "MC")
+		      {
+		        memory=0;
+		        sm.style.visibility = "hidden";
+		      }
+		      else if(op.value == "MR")
+		      {
+		       document.getElementById('display').value = memory;
+		       m.style.visibility = "visible";
+		      }
+
+		}
 		function buttons_ops(bid)
 		{
-			if(bid.value==".")
+			if(bid.value == ".")
 			{
 			  if(point)
 			  {
-			  document.getElementById('display').value+=bid.value;
+			  document.getElementById('display').value += bid.value;
 			  point=false;
 			  }
 			}
@@ -328,181 +353,113 @@ function Date_time_Calculator()
 			}
 		}
 
-
 		function result()
 		{
-			var store = document.getElementById('display').value+"$";
-			var numbers = [];
+			var data_entry= document.getElementById('display').value+"$";
+			var digits = [];
 			var operators = [];
-			var p = 0,c = 0,f ="", f1 = false;
-			for(var i = 0; i < store.length; i++)
+			for(var i = 0; i < data_entry.length; i++)
 			{
-
-	             if(store[i] == "+" ||store[i] == "-"||store[i] == "*"||store[i] == "/"||store[i] ==  "%"||store[i] == "R" ||store[i] == "$" )
-	             {
-	               operators.push(i);
-	               if(store[i]!="$")
-	               f=store[i];
-	             }
-
-
-			}
-
-	        for(var i=0;i<operators.length;i++)
-	        {
-	           c=operators[i];
-	            var num="";
-	          for(var j=p; j<c;j++)
-	          {
-	            num+=store[j];
-	          }
-
-	            numbers.push(parseFloat(num));
-	          p=c+1;
+				if(data_entry[i] == "+" ||data_entry[i] == "-"||data_entry[i] == "*"||data_entry[i] == "/"||data_entry[i] ==  "%"||data_entry[i] == "R" ||data_entry[i] == "$" )
+	            	operators.push(i);
+	        	else
+	        		digits[i] = data_entry[i];
 	        }
 
-
-		    if(f=="+")
-		    document.getElementById('display').value=sum(numbers);
-		    else if(f=="-")  document.getElementById('display').value=sub(numbers);
-		    else if(f=="*")  document.getElementById('display').value=mult(numbers);
-		    else if(f=="/")  document.getElementById('display').value=div(numbers);
-		    else if(f=="%")  document.getElementById('display').value=percent(numbers);
-		    else if(f=="R")  document.getElementById('display').value=rem(numbers);
+		    if( operator[i] == "+" )
+		    	document.getElementById('display').value = add(digits);
+		    else if(operator[i] == "-" )  
+		    	document.getElementById('display').value = sub(digits);
+		    else if(operator[i] == "*" )  
+		    	document.getElementById('display').value = mul(digits);
+		    else if(operator[i] == "/" )  
+		    	document.getElementById('display').value = div(digits);
+		    else if(operator[i] == "%" )  
+		    	document.getElementById('display').value = percent(digits);
+		    else if(operator[i] =="R")  
+		    	document.getElementById('display').value = rem(digits);
 		}
-
-
-		function sum(numbers)
-		{
-		    var res=0;
-		    for(var i=0; i<numbers.length;i++)
-		    {
-		       res+=numbers[i];
-		    }
-
-		    return res;
-		}
-
-
-		function mult(numbers)
-		{
-		   var res=1;
-		    for(var i=0; i<numbers.length;i++)
-		    {
-		       res*=numbers[i];
-		    }
-
-		    return res;
-		}
-
-
-		function sub(numbers)
-		{
-		   var res, p=0;
-		    for(var i=0; i<numbers.length;i++)
-		    {
-		       if(p!=0)
-		       {
-		            res-=numbers[i];
-		       }else
-		       {
-		         p=1;
-		         res=numbers[i];
-		       }
-
-		    }
-
-		    return res;
-		}
-
-
-		function div(numbers)
-		{
-		   var res, p=0;
-		    for(var i=0; i<numbers.length;i++)
-		    {
-		       if(p!=0)
-		       {
-		            res/=numbers[i];
-		       }else
-		       {
-		         p=1;
-		         res=numbers[i];
-		       }
-
-		    }
-
-		    return res;
-		}
-
-
-
 		function clear()
 		{
-			var v1=document.getElementById('display');
-			v1.value="";
-		    point=true;
+			var clear=document.getElementById('display');
+			clear.value="";
 		}
-
 
 		function cancel()
 		{
-		 var t=document.getElementById('display').value;
+		 var can=document.getElementById('display').value;
 		document.getElementById('display').value=t.substring(0,t.length -1);
 		}
-
-
-		function percent(numbers)
+		function add(digits)
 		{
-		   return numbers[0]/100;
+		    var sum = 0;
+		    for(var i = 0; i < digits.length; i++)
+		    {
+		       sum += digits[i];
+		    }
+
+		    return sum;
 		}
-
-
-		function rem(numbers)
+		function sub(digits)
 		{
-		 var res;
+		   var diff, count=0;
+		    for(var i = 0; i < digits.length; i++)
+		    {
+		       if( count != 0 )
+		       {
+		            diff-=digits[i];
+		       }else
+		       {
+		         count = 1;
+		         diff = digits[i];
+		       }
 
-		    if(numbers[0]>numbers[1])
-		     res=numbers[0] % numbers[1];
-		   else
-		     res="wrong input format.";
-
-		   return res;
+		    }
+			return diff;
 		}
-
-
-		function operation(op)
+		function mul(digits)
 		{
-		  var v =document.getElementById('display').value;
-		  var sm=document.getElementById('mtxt');
-
-		      if(op.value=="M+")
-		      {
-		         memory+=parseFloat(v);
-		         sm.style.visibility="visible";
-		      }
-
-		      else if(op.value=="M-")
-		      {
-		        memory-=parseFloat(v);
-		        sm.style.visibility="visible";
-		      }
-		      else if(op.value=="MC")
-		      {
-		        memory=0;
-		        sm.style.visibility="hidden";
-		      }
-		      else if(op.value=="MR")
-		      {
-		       document.getElementById('display').value=memory;
-		       sm.style.visibility="visible";
-		      }
-
+		   var mul=1;
+		    for(var i=0; i < digits.length; i++)
+		    {
+		       mul *= digits[i];
+		    }
+			return mul;
 		}
+		function div(digits)
+		{
+		   var q, count=0;
+		    for(var i=0; i < digits.length; i++)
+		    {
+		       if(count!=0)
+		       {
+		            q /= digits[i];
+		       }else
+		       {
+		         count = 1;
+		         q = digits[i];
+		       }
 
-
+		    }
+		    return q;
+		}
+		function rem(digits)
+		{
+		 var rem;
+		 if( digits[0] > digits[1] )
+		 	rem = digits[0] % digits[1];
+		 else
+		 	rem = "Unable to compute" ;
+		return rem;
+		}
+		function percent(digits)
+		{	
+		  var per = digits[0]/100;
+		  return per;
+		}
+		
 	}
 	}
 
 
-})()
+)();
