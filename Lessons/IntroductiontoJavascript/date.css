@@ -1,0 +1,80 @@
+body
+{
+	background-image: url("time.jpg");
+	color: white;
+	font-size: 30px;
+	font-family: Arial;
+}
+#heading
+{
+	height: 50px;
+	width: 1200px;
+	color: orange;
+	margin-bottom: 100px;
+}
+#main
+{
+	height: 800px;
+	width: 800px;
+}
+#datediff
+{
+	height: 200px;
+	width: 750px;
+	padding: 20px;
+	color: orange;
+	border: 2px dotted orange;
+	border-radius: 8px;
+	margin-bottom: 50px;
+	font-size: 15px;
+	font-family: Arial;
+	border-radius: 10px;
+	color: yellow;
+}
+#timediff
+{
+	height: 200px;
+	width: 750px;
+	padding: 20px;
+	color: orange;
+	border: 2px dotted orange;
+	margin-bottom: 50px;
+	font-size: 15px;
+	font-family: Arial;
+	border-radius: 10px;
+	color: yellow;
+}
+#nextdate
+{
+	height: 200px;
+	width: 750px;
+	padding: 20px;
+	color: orange;
+	border: 2px dotted orange;
+	margin-bottom: 50px;
+	font-size: 15px;
+	font-family: Arial;
+	border-radius: 10px;
+	color: yellow;
+}
+#ans1, #ans2, #ans3
+{
+	width: 300px;
+	height: 40px;
+	font-weight: bold;
+	border-radius: 8px;
+}
+#button
+{
+	width: 80px;
+	height: 30px;
+	border-radius: 10px;
+	color: blue;
+	font-family: Arial;
+	background-color: yellow;
+	font-weight: bold;
+}
+#d1, #d2, #t1, #t2, #time, #interval
+{
+	border-radius: 8px;
+}

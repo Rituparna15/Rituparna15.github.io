@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title> Calculator </title>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+<head>
+	<body>
+		<div id = "calculator">
+			<div id = "display">
+				<input type = "text" class = "display" id = "d" readonly size= "20"> </div> 
+			</div> 
+			<div id = "keys">
+				<p>
+					<input type = "button" class = "bluekey" value= "MC"  onclick= 'C()'>
+					<input type = "button" class = "bluekey" value= "M+"  onclick= 'C()'>
+					<input type = "button" class = "bluekey" value= "M-"  onclick= 'C()'>
+					<input type = "button" class = "bluekey" value= "MR"  onclick= 'C()'>
+				</p>
+				<p>
+					<input type = "button" class = "bluekey" value= "CLS"  onclick= 'C()'>
+					<input type = "button" class = "bluekey" value= "CAN"  onclick= 'C()'>
+					<input type = "button" class = "bluekey" value= "REM"  onclick= 'VAL()'>
+					<input type = "button" class = "pinkkey" value= "%"  onclick= 'VAL("%")'>
+				</p>
+				<p>
+					<input type = "button" class = "greenkey" value= "7"  onclick= 'VAL("7")'>
+					<input type = "button" class = "greenkey" value= "8"  onclick= 'VAL("8")'>
+					<input type = "button" class = "greenkey" value= "9"  onclick= 'VAL("9")'>
+					<input type = "button" class = "pinkkey" value= "+"  onclick= 'VAL("+")'>
+				</p>
+				<p>
+					<input type = "button" class = "greenkey" value= "4"  onclick= 'VAL("4")'>
+					<input type = "button" class = "greenkey" value= "5"  onclick= 'VAL("5")'>
+					<input type = "button" class = "greenkey" value= "6"  onclick= 'VAL("6")'>
+					<input type = "button" class = "pinkkey" value= "-"  onclick= 'VAL("-")'>
+				</p>
+				<p>
+					<input type = "button" class = "greenkey" value= "1"  onclick= 'VAL("1")'>
+					<input type = "button" class = "greenkey" value= "2"  onclick= 'VAL("2")'>
+					<input type = "button" class = "greenkey" value= "3"  onclick= 'VAL("3")'>
+					<input type = "button" class = "pinkkey" value= "*"  onclick= 'VAL("*")'>
+				</p>
+				<p>
+					<input type = "button" class = "pinkkey" value= "."  onclick= 'VAL(".")'>
+					<input type = "button" class = "greenkey" value= "0"  onclick= 'VAL("0")'>
+					<input type = "button" class = "pinkkey" value= "="  onclick= 'VAL("=")'>
+					<input type = "button" class = "pinkkey" value= "/"  onclick= 'VAL("/")'>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

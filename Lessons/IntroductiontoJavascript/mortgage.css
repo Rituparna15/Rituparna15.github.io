@@ -1,0 +1,44 @@
+body
+{
+	background-image: url("money2.jpg");
+	color: red;
+	font-family: Arial;
+	font-weight: bold;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+#main
+{
+	height: 200px;
+	width: 750px;
+	padding: 10px;
+	border: 2px;
+	margin-bottom: 30px;
+	font-size: 50px;
+	font-family: Arial;
+	border-radius: 10px;
+	font-weight: bold;
+	color: cyan;
+}
+#P, #T, #E, #m
+{
+	height: 40px;
+	width: 300px;
+	border-radius: 10px;
+	color: violet;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 26px;
+}
+#b1, #b2
+{
+	height: 40px;
+	width: 90px;
+	color: red;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}

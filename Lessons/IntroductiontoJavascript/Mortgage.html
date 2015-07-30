@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Mortgage Calculator</title>
+	<link rel="stylesheet" type="text/css" href="mortgage.css">
+	<body>
+		<script src="mortgage.js">
+		</script>
+		<div id ="main">
+			Mortgage Calculator
+			<table id = "table">
+				<tr> <td colspan="2">You may input any two fields, to get the output of the third one. <td> </tr>
+				<tr> <td colspan="2">Press 'Reset' to clear all data. <td> </tr>
+				<tr>
+					<td> Principal : </td><br><br><td><input type="text" name="P" id="P" onkeypress=" return only_digit(event)"></td>
+				</tr>
+				<tr>
+					<td> Time ( in months ): </td> <td><input type="text" name="T" id="T" onkeypress="return only_digit(event)"></td>
+				</tr>
+				<tr>
+					<td> Rate of Interest : </td> <td> * Fixed at 10% * (Interest Rates May Vary) </td>
+				</tr>
+				<tr>
+					<td> EMI (Equated Monthly Installments) : </td> <td><input type="text" name="E" id="E" onkeypress=" return only_digit(event)"></td>
+				</tr>
+				<tr align="center">
+					<td> <input type="button" name="b1" id="b1" value= "Reset" onclick="erase()"></td> <td>  <input type="button" name="b2" id="b2" value= "Submit" onclick="getdata()"></td>
+				</tr>
+				<tr>
+					<td> Message from Calculator: </td> <td><input type="text" name="m" id="m"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
