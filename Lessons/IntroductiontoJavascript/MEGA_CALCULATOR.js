@@ -1,8 +1,8 @@
 (function ()
 {
-	function Create_element(tags, parent, attributes, el_style, el_event, label)
+	function createElement(tags, parent, attributes, el_style, el_event, label)
 	{
-		var element = document.Create_element(tags), 
+		var element = document.createElement(tags), 
 		attrs, events, styles;
 		typeof label != "undefined" && element.appendChild(document.createTextNode(label));
 		if(el_event!=null)
@@ -28,22 +28,22 @@
 	}	
 
 	var body = document.body;
-	Create_element("div", body, {}, {}, {}, "");
+	createElement("div", body, {}, {}, {}, "");
 
-	var maindiv = Create_element("div", body, {id:"maindiv"}, { padding:"0 0 0 30%"}, {} );
-	var subdiv = Create_element("div", maindiv, {id:"subdiv"}, {width:"50%", height:"50px", padding:"2"} );
+	var maindiv = createElement("div", body, {id:"maindiv"}, { padding:"0 0 0 30%"}, {} );
+	var subdiv = createElement("div", maindiv, {id:"subdiv"}, {width:"50%", height:"50px", padding:"2"} );
 
-	Create_element("input", subdiv, {id:"Mortgage", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
-	Create_element("span",  subdiv, {undefined}, {},{}, "Mortgage Calculator");
+	createElement("input", subdiv, {id:"Mortgage", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
+	createElement("span",  subdiv, {undefined}, {},{}, "Mortgage Calculator");
 
-	Create_element("input", subdiv, {id:"Datetime", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
-	Create_element("span",  subdiv, {}, {},{}, "Date Time Calculator");
+	createElement("input", subdiv, {id:"Datetime", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
+	createElement("span",  subdiv, {}, {},{}, "Date Time Calculator");
 
-	Create_element("input", subdiv, {id:"Basic", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
-	Create_element("span",  subdiv, {}, {},{}, "Basic Calculator");
+	createElement("input", subdiv, {id:"Basic", type:"radio", name:"check"}, {},{click: function () {Selection(this.id)}} );
+	createElement("span",  subdiv, {}, {},{}, "Basic Calculator");
 
 
-	var render= Create_element("div", maindiv, {id:"render"}, { width:"45%", height:"25em"}, {});
+	var render= createElement("div", maindiv, {id:"render"}, { width : "65%", height : "500px"}, {});
 
 
 	function Selection(id)
@@ -65,45 +65,45 @@
 	 	}	
 	}
 
-function Date_time_Calculator()
+function Date_Time_Calculator()
 {
 		render.innerHTML="";
 
-		var div1 = Create_element("div",   render, {id:"div1"}, {border:"1px solid", width: "100%",margin:"2%",padding:"2%"}, {});
+		var div1 = createElement("div", render, {id:"div1"}, {border:"1px solid blue", width: "35%",margin:"2%",padding:"2%"}, {});
 		
-		Create_element("span",  div1, {}, {}, {}, "Enter first date : ");
-		Create_element("input", div1, {id:"d1", type:"text", placeholder:"Year Month Date"}, {}, {});
+		createElement("span",  div1, {}, {}, {}, "Enter first date : ");
+		createElement("input", div1, {id:"d1", type:"text", placeholder:"Year Month Date"}, {}, {});
 
-		Create_element("span",  div1, {}, {}, {}, "Enter second date : ");
-		Create_element("input", div1, {id:"d2", type:"text", placeholder:"Year Month Date"}, {}, {});
+		createElement("span",  div1, {}, {}, {}, "Enter second date : ");
+		createElement("input", div1, {id:"d2", type:"text", placeholder:"Year Month Date"}, {}, {});
 		
-		Create_element("input", div1, { type:"submit", value:"Lets Go: "}, {}, {click: function(){ datediff() }});
-		Create_element("input", div1, {id:"ans1", type:"text"}, {}, {});
+		createElement("input", div1, { type:"submit", value:"Calculate: "}, {}, {click: function(){ datediff() }});
+		createElement("input", div1, {id:"ans1", type:"text"}, {}, {});
 
 
-		var timediv = Create_element("div", render, {id:"timediv"}, {border:"1px solid", width: "100%",margin:"2%",padding:"2%"}, {});		   
+		var timediv = createElement("div", render, {id:"timediv"}, {border:"1px solid blue", width: "35%",margin:"2%",padding:"2%"}, {});		   
 
-		var div2 = Create_element("div", timediv, {id:"div2"}, { width: "100%"}, {});
+		var div2 = createElement("div", timediv, {id:"div2"}, { width: "100%"}, {});
 		
-		Create_element("span",  div2, {}, {}, {}, "Enter time 1 : ");
-		Create_element("input", div2, {id:"t1", type:"text", placeholder:"HH:MM"}, {}, {});
+		createElement("span",  div2, {}, {}, {}, "Enter time 1 : ");
+		createElement("input", div2, {id:"t1", type:"text", placeholder:"HH:MM"}, {}, {});
 
-		Create_element("span",  div2, {}, {}, {}, "Enter time 2 : ");
-		Create_element("input", div2, {id:"t2", type:"text", placeholder:"HH:MM"}, {}, {});
+		createElement("span",  div2, {}, {}, {}, "Enter time 2 : ");
+		createElement("input", div2, {id:"t2", type:"text", placeholder:"HH:MM"}, {}, {});
 		
-		Create_element("input", div2, { type:"submit", value:"Lets Go: "}, {}, {click: function(){ timediff() }});
-		Create_element("input", div2, {id:"ans2", type:"text"}, {}, {});
+		createElement("input", div2, { type:"submit", value:"Calculate: "}, {}, {click: function(){ timediff() }});
+		createElement("input", div2, {id:"ans2", type:"text"}, {}, {});
 
-		var div3 = Create_element("div", timediv, {id:"div3"}, { width: "100%"}, {});
+		var div3 = createElement("div", timediv, {id:"div3"}, { width: "100%"}, {});
 		
-		Create_element("span",  div3, {}, {}, {}, "Enter time: ");
-		Create_element("input", div3, {id:"t", type:"text", placeholder:"HH:MM"}, {}, {});
+		createElement("span",  div3, {}, {}, {}, "Enter time: ");
+		createElement("input", div3, {id:"t", type:"text", placeholder:"HH:MM"}, {}, {});
 
-		Create_element("span",  div3, {}, {}, {}, "Enter time interval: ");
-		Create_element("input", div3, {id:"i", type:"text", placeholder:"HH:MM"}, {}, {});
+		createElement("span",  div3, {}, {}, {}, "Enter time interval: ");
+		createElement("input", div3, {id:"i", type:"text", placeholder:"HH:MM"}, {}, {});
 		
-		Create_element("input", div3, { type:"submit", value:"Lets Go: "}, {}, {click: function(){ timeinterval() }});
-		Create_element("input", div3, {id:"ans3", type:"text"}, {}, {});
+		createElement("input", div3, { type:"submit", value:"Calculate: "}, {}, {click: function(){ timeinterval() }});
+		createElement("input", div3, {id:"ans3", type:"text"}, {}, {});
 
 
 	function datediff()
@@ -177,26 +177,26 @@ function Date_time_Calculator()
 	{
 
 	render.innerHTML="";
-	var div1 = Create_element("div", render, {id:"d1", width:"90%"}, {}, {});
-	Create_element("span",  d1, {}, {marginRight:"20%"}, {}, "Principal: ");
-	Create_element("input", d1, {type:"text", id:"P",   placeholder:"Enter the amount" }, {}, {click: function(){only_digit(e)}});
+	var div1 = createElement("div", render, {id:"d1", width:"90%"}, {}, {});
+	createElement("span",  d1, {}, {marginRight:"27%"}, {}, "Principal: ");
+	createElement("input", d1, {type:"text", id:"P",   placeholder:"Enter the amount" }, {}, {click: function(){only_digit(e)}});
 
-	var div2 = Create_element("div", render, {id:"d2", width:"90%"}, {}, {});
-	Create_element("span",  d2, {}, {marginRight:"27%"}, {}, "Rate of interest: ");
-	Create_element("span",  d2, {}, {marginRight:"27%"}, {}, "Fixed at 10% (Interest rates may vary)");
+	var div2 = createElement("div", render, {id:"d2", width:"90%"}, {}, {});
+	createElement("span",  d2, {}, {marginRight:"20%"}, {}, "Rate of interest: ");
+	createElement("span",  d2, {}, {}, {}, "Fixed at 10% (Interest rates may vary)");
 
-	var div3 = Create_element("div", render, {id:"d3", width:"90%"}, {}, {});
-	Create_element("span",  d3, {}, {}, {}, "Time (in months): ");
-	Create_element("input", d3, {type:"text", id:"T",   placeholder:"Enter time in months" }, {}, {click: function(){only_digit(e)}});
+	var div3 = createElement("div", render, {id:"d3", width:"90%"}, {}, {});
+	createElement("span",  d3, {}, {marginRight:"18%"}, {}, "Time (in months): ");
+	createElement("input", d3, {type:"text", id:"T",   placeholder:"Enter time in months" }, {}, {click: function(){only_digit(e)}});
 
-	var div4 = Create_element("div", render, {id:"d4", width:"90%"}, {}, {});
-	Create_element("span",  d4, {}, {marginRight:"27%"}, {}, "EMI : ");
-	Create_element("input", d4, {type:"text", id:"E", placeholder:"Enter the EMI" }, {}, {click: function(){only_digit(e)}});
+	var div4 = createElement("div", render, {id:"d4", width:"90%"}, {}, {});
+	createElement("span",  d4, {}, {marginRight:"31%"}, {}, "EMI : ");
+	createElement("input", d4, {type:"text", id:"E", placeholder:"Enter the EMI" }, {}, {click: function(){only_digit(e)}});
 
-	var div5 = Create_element("div", render, {id:"d5", width:"90%"}, {}, {});
-	Create_element("input", d5, {type:"submit", value:"Submit" }, {marginTop:"3%"}, {click: function(){getdata()}});
-	Create_element("input", d5, {type:"reset", value:"Reset" }, {marginTop:"6%"}, {click: function(){erase()}});
-	Create_element("span", d5, {id:"m"}, {}, {});
+	var div5 = createElement("div", render, {id:"d5", width:"90%"}, {}, {});
+	createElement("input", d5, {type:"submit", value:"Submit" }, {marginTop:"3%", marginRight:"10%"}, {click: function(){getdata()}});
+	createElement("input", d5, {type:"reset", value:"Reset" }, {marginTop:"3%"}, {click: function(){erase()}});
+	createElement("span", d5, {id:"m"}, {}, {});
 
 	function getdata()
 	{
@@ -256,20 +256,20 @@ function Date_time_Calculator()
 	function Basic_Calculator()
 	{
 		render.innerHTML = "";
-		Create_element("span", render, {id:"mem_text"}, {position: "absolute", fontSize: "10px", visibility: "hidden"}, {}, "M");
-	   	Create_element("input", render, {type:"text", id:"display", placeholder:"0" }, {width:"25 em", height:"3em", textAlign:"right"},{}); 
+		createElement("span", render, {id:"mem_text"}, {position: "absolute", fontSize: "10px", visibility: "hidden"}, {}, "M");
+	   	createElement("input", render, {type:"text", id:"display", placeholder:"0" }, {border: "10px solid #80CCE6", width:"28 em", height:"6 em", textAlign:"right"},{}); 
 
-	    var buttontable = Create_element("table", render, {id:"buttontable"}, {}, {});	
+	    var buttontable = createElement("table", render, {id:"buttontable"}, {border: "10px solid #80CCE6", width: "11em", height: "200px"}, {});	
 	   
 
 		function insertbutton(condition, row, data, blabel, operation)
 		{
-			if(condition)
-		    Create_element("tr", buttontable, {bid:row}, {}, {});
-		
-		    var td = document.Create_element("TD");
-		    Create_element("input", td, {type:"submit", value: blabel}, {width: "6 em", height: "3 em", background: "transparent", borderRadius: "5px", border: "1px solid blue", outline:"none", cursor: "pointer" }, {click: function () {operation(this)}});
-		    document.getElementById(row).appendChild(data);
+			if(condition) {
+		    	createElement("tr", buttontable, {id:row}, {}, {});
+			}
+		    var td = document.createElement("td");
+		    createElement("input", td, {type:"submit", value: blabel}, {width: "10 em", height: "9 em", background: "#94FFDB", borderRadius: "5px", border: "1px solid blue", outline:"none", cursor: "pointer" }, {click: function () {operation(this)}});
+		    document.getElementById(row).appendChild(td);
 		}
 
 		var point = true;
@@ -305,6 +305,40 @@ function Date_time_Calculator()
 	    insertbutton(false, 5, 3, "=", result);
 	    insertbutton(false, 5, 4, "/", buttons_ops);
 
+	    function result()
+		{
+			var data_entry= document.getElementById('display').value+"$";
+			var digits = [];
+			var operator = [];
+			for(var i = 0; i < data_entry.length; i++)
+			{
+				if(data_entry[i] == "+" ||data_entry[i] == "-"||data_entry[i] == "*"||data_entry[i] == "/"||data_entry[i] ==  "%"||data_entry[i] == "R" ||data_entry[i] == "$" )
+	            	operator.push(data_entry[i]);
+	        	else
+	        		digits.push(data_entry[i]);
+	        }
+	        i=0;
+	        if( operator[i] == "+" ) {
+		    	document.getElementById('display').value = add(digits);
+		    }
+		    else if(operator[i] == "-" )  {
+		    	document.getElementById('display').value = sub(digits);
+		    }
+		    else if(operator[i] == "*" )  {
+		    	document.getElementById('display').value = mul(digits);
+		    }
+		    else if(operator[i] == "/" )  {
+		    	document.getElementById('display').value = div(digits);
+		    }
+		    else if(operator[i] == "%" )  {
+		    	document.getElementById('display').value = percent(digits);
+		    }
+		    else if(operator[i] =="R")  {
+		    	document.getElementById('display').value = rem(digits);
+		    }
+		}
+		
+
 	    function memory_ops(op)
 		{
 		  var dis = document.getElementById('display').value;
@@ -324,7 +358,7 @@ function Date_time_Calculator()
 		      else if(op.value == "MC")
 		      {
 		        memory=0;
-		        sm.style.visibility = "hidden";
+		        m.style.visibility = "hidden";
 		      }
 		      else if(op.value == "MR")
 		      {
@@ -353,32 +387,7 @@ function Date_time_Calculator()
 			}
 		}
 
-		function result()
-		{
-			var data_entry= document.getElementById('display').value+"$";
-			var digits = [];
-			var operators = [];
-			for(var i = 0; i < data_entry.length; i++)
-			{
-				if(data_entry[i] == "+" ||data_entry[i] == "-"||data_entry[i] == "*"||data_entry[i] == "/"||data_entry[i] ==  "%"||data_entry[i] == "R" ||data_entry[i] == "$" )
-	            	operators.push(i);
-	        	else
-	        		digits[i] = data_entry[i];
-	        }
-
-		    if( operator[i] == "+" )
-		    	document.getElementById('display').value = add(digits);
-		    else if(operator[i] == "-" )  
-		    	document.getElementById('display').value = sub(digits);
-		    else if(operator[i] == "*" )  
-		    	document.getElementById('display').value = mul(digits);
-		    else if(operator[i] == "/" )  
-		    	document.getElementById('display').value = div(digits);
-		    else if(operator[i] == "%" )  
-		    	document.getElementById('display').value = percent(digits);
-		    else if(operator[i] =="R")  
-		    	document.getElementById('display').value = rem(digits);
-		}
+		
 		function clear()
 		{
 			var clear=document.getElementById('display');
@@ -395,7 +404,7 @@ function Date_time_Calculator()
 		    var sum = 0;
 		    for(var i = 0; i < digits.length; i++)
 		    {
-		       sum += digits[i];
+		       sum += parseInt(digits[i]);
 		    }
 
 		    return sum;
