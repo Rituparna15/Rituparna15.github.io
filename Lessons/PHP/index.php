@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $phoneErr = "Phone no is required";
    } else 
      {
-       if (preg_match('/(0[0-9]{9})/', $phone))
+       if (preg_match('^[7-9][0-9]{9}$', $phone))
        {
        $phone = test_input($_POST["phone"]);
        $count ++;
