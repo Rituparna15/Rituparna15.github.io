@@ -1,0 +1,155 @@
+<html>
+<head>
+  <title> Assignment </title>
+</head>
+  <style>
+      .tabs 
+      {
+          position: relative; 
+          border-radius: 8px;
+          height: 400px;
+          width: 850px;
+          clear: both;
+          margin: 100px;
+          font-family: Arial;
+          color: grey;
+      }
+      .tab 
+      {
+          float: left;
+      }
+      .tab label 
+      {
+          border-radius: 8px;
+          background: white; 
+          padding: 10px; 
+          border: 1px solid #E3EEFF; 
+          margin-left: -1px; 
+          position: relative;
+          left: 20px; 
+          font-family: Arial;
+      }
+      .tab [type=radio] 
+      {
+          display: none;   
+      }
+      .content 
+      {
+          border-radius: 8px;
+          position: absolute;
+          top: 28px;
+          left: 0;
+          background: white;
+          right: 0;
+          bottom: 0;
+          padding: 20px;
+          border: 1px solid #70AAFF;
+          background-color: #E3EEFF;
+          font-family: Arial; 
+      }
+      [type=radio]:checked ~ label 
+      {
+          background: #E3EEFF;
+          border-bottom: 1px solid #E3EEFF;
+          z-index: 2;
+          color: #4775FF;
+      }
+      [type=radio]:checked ~ label ~ .content 
+      {
+          z-index: 1;
+      }
+      #leftdiv 
+      {  
+          padding: 10px;
+          border-radius: 8px;
+          width: 340px; 
+          height: 290px ; 
+          border: 1px solid #6699FF; 
+          float: left;
+          margin-left: 23px; 
+          margin-right: 40px;
+          background-color: white;
+
+      }
+      #rightdiv
+      { 
+          padding: 10px;
+          border-radius: 8px;
+          width: 340px; 
+          height: 290px; 
+          border: 1px solid #6699FF; 
+          float: left;
+          background-color: white;
+          
+      }
+      .clear {clear:both;}
+      p.heading
+      {
+          font-family: Arial;
+          font-size: 30px;
+          color: grey;
+      }
+      p.htext1
+      {
+          font-family: Arial;
+          font-size: 15px;
+          color: grey;
+      }
+      p.htext2
+      {
+          font-family: Arial;
+          font-size: 15px;
+          color: #7EBFFF;
+      }
+      p.heading2
+      {
+          font-family: Arial;
+          font-size: 30px;
+          color: grey;
+      }
+      button
+      {
+          width: 150px;
+          height: 36px;
+          font-family: Arial;
+          font-size: 15px;
+          font-weight: 5px;
+          color: white;
+          position: relative;
+          bottom: 7%;
+          left: 15%;
+          background-color: #29A329;
+      }
+
+  </style>
+<body>
+  <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="tab-1" name="tab-group-1" checked>
+        <label for="tab-1">  News  </label>
+          <div class="content">
+              <div id="leftdiv">
+                <p class="heading">Welcome</p>
+                <p class="htext1">Simple and effective AngularJS bindings for FusionCharts Javascript Charting Library. Simple and effective AngularJS bindings for FusionCharts Javascript Charting Library. </p>
+                <p class="htext2">AngularJS bindings for FusionCharts Javascript Charting Library. </p>
+              </div>
+              <div id="rightdiv">
+                <p class="heading2">Latest News</p>
+                <img src="image.jpg" alt="Tim Cook" style="width:340px; height:190px;">
+              </div>
+                <button type="button">LEARN MORE</button>
+          </div>   
+      </div>
+      <div class="tab">
+        <input type="radio" id="tab-2" name="tab-group-1">
+        <label for="tab-2">Subscribe</label>
+        <div class="content">
+          <img src="subscribe.jpg" alt="Subscribe" style="width:400px; height:200px;">
+          <br>
+          <br>
+          Thank you for visiting!
+        </div> 
+      </div>
+  </div>
+</body>
+</html>

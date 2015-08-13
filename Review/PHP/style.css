@@ -1,0 +1,193 @@
+ .error 
+      {
+          color: #FF0000;
+          font-size: 10px;
+      }
+
+      .tabs 
+      {
+          position: relative; 
+          border-radius: 8px;
+          height: 450px;
+          width: 900px;
+          clear: both;
+          margin: 100px;
+          font-family: Arial;
+          color: #828282;
+      }
+      .tab 
+      {
+          float: left;
+      }
+      .tab label 
+      {
+          position: absolute;
+          background: white; 
+          padding: 10px;
+          border: 1px solid #bdcdee; 
+          margin-left: 4px; 
+          position: relative;
+          left: 20px; 
+          font-family: Arial;
+      }
+      .tab [type=radio] 
+      {
+          display: none;   
+      }
+      .content 
+      {
+          border-radius: 8px;
+          position: absolute;
+          top: 28px;
+          left: 0;
+          background: white;
+          right: 0;
+          bottom: 0;
+          padding: 20px;
+          border: 1px solid #bdcdee;
+          background-color:  #e4efff;
+          font-family: Arial; 
+      }
+      [type=radio]:checked ~ label 
+      {
+          background: #e4efff;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-right: 30px;
+          padding-left: 30px;
+          border-bottom: 1px solid #e4efff ;
+          z-index: 2;
+          color: #4775FF;
+          width: 500px;
+          height: 500px;
+          font-weight: bold;
+          width: 50%;
+          
+      }
+      [type=radio]:checked ~ label ~ .content 
+      {
+          z-index: 1;
+      }
+      #leftdiv 
+      {  
+          padding: 15px;
+          border-radius: 8px;
+          width: 340px; 
+          height: 290px ; 
+          border: 1px solid #bdcdee; 
+          float: left;
+          margin-left: 15px; 
+          margin-right: 35px;
+          background-color: white;
+      }
+      #rightdiv
+      { 
+          padding: 15px;
+          border-radius: 8px;
+          width: 340px; 
+          height: 290px; 
+          border: 1px solid #bdcdee; 
+          float: left;
+          background-color: white;
+          
+      }
+      .clear {clear:both;}
+      p.heading
+      {
+          font-family: Arial;
+          font-size: 30px;
+          color: #717171;
+      }
+      p.htext1
+      {
+          font-family: Arial;
+          font-size: 15px;
+          color: #717171;
+      }
+      p.htext2
+      {
+          font-family: Arial;
+          font-size: 15px;
+          color: #7EBFFF;
+      }
+      p.heading2
+      {
+          font-family: Arial;
+          font-size: 30px;
+          color: #717171;
+      }
+      button
+      {
+          width: 180px;
+          height: 40px;
+          font-family: Arial;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+          position: relative;
+          bottom: 20%;
+          left: 13%;
+          background-color: #6BB224;
+          border-radius: 5px;
+          font-weight: bold;
+      }
+      #subdiv
+      {
+          border: 1px solid #bdcdee;
+          border-radius: 8px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-left: 8px;
+          padding-right: 8px;
+          font-size: 19px;
+          width: 98%;
+          height: 90%; 
+          top: 2%; 
+          margin: 0 auto;
+          position: relative; 
+          background: white;
+      }
+      #rad1
+      {
+        display: inline-block;
+      }
+       #rad2
+      {
+        display: inline-block;
+      }
+      .table
+      { 
+        position: absolute;
+        width: 98%;
+        height: 85%; 
+        align : right;
+        padding-top: 15px;
+        padding-bottom: 8px;
+        padding-left: 30px;
+        color: #717171;
+        background: white;
+        padding: 10px;
+      }
+      #button2
+      {
+        position: absolute;
+        right: 7%;
+        top: 93%;
+        left: 75%;
+        right: 10%;
+      }
+      #button3
+      {
+        position: absolute;
+        right: 7%;
+        top: 93%;
+        left: 50%;
+        right: 10%;
+      }
+      #button1
+      {
+        position: absolute;
+        right: 85%;
+        top: 85%;
+        left: 15%%; 
+      }
